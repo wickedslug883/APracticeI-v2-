@@ -7,7 +7,7 @@ const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
 const counter = document.getElementById("counter");
-const timeGauge = document.getElementById("timeGauge");
+
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 const saveMenu = document.getElementById("saveMenu");
@@ -46,11 +46,10 @@ const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
 const questionTime = 10; // 10s
-const gaugeWidth = 150; // 150px
-const gaugeUnit = gaugeWidth / questionTime;
+
 let TIMER;
 let score = 0;
-
+score = (100 * score/questions.length);
 // render a question
 function renderQuestion(){
     let q = questions[runningQuestion];
@@ -87,7 +86,6 @@ function renderProgress(){
 function renderCounter(){
     if(count <= questionTime){
         counter.innerHTML = count;
-        timeGauge.style.width = count * gaugeUnit + "px";
         count++
     }else{
         count = 0;
@@ -113,8 +111,7 @@ function checkAnswer(answer){
         // change progress color to green
         answerIsCorrect();
     }else{
-        // answer is wrong
-        // change progress color to red
+        // wrong color to red
         answerIsWrong();
     }
     count = 0;
@@ -156,37 +153,38 @@ function scoreRender(){
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
     
 
+}
+const username = document.querySelector('#username');
+const saveScoreBtn = document.querySelector('#saveScoreBtn');
+const finalScore = document.querySelector('#finalScore');
+const mostRecentScore = localStorage.getItem('mostRecentScore');
 
-const saveScoreBtn = document.getElementById('saveScoreBtn');
-const finalScore = document.getElementById('finalScore');
-const highScoresList = document.getElementById("highScoresList");
+const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 const MAX_HIGH_SCORES = 5;
-finalScore.innerText = scorePerCent;
+
+finalScore.innerText = mostRecentScore;
 
 username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value;
-});
+    saveScoreBtn.disabled = !username.value
+})
 
-saveHighScore = (e) => {
-    e.preventDefault();
+saveHighScore = e => {
+    e.preventDefault()
 
     const score = {
-        score: scorePerCent,
-        name: username.value,
-    };
-    highScores.push(score);
-    highScores.sort((a, b) => b.score - a.score);
-    highScores.splice(5);
+        score: mostRecentScore,
+        name: username.value
+    }
 
-    localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
-    console.log(highScores);
+    highScores.push(score)
+
+    highScores.sort((a,b) => {
+        return b.score - a.score
+    })
+
+    highScores.splice(5)
+
+    localStorage.setItem('highScores', JSON.stringify(highScores))
+    window.location.assign('/')
 };
-
-highScoresList.innerHTML = highScores
-  .map(score => {
-    return `<li class="high-score">${score.name} - ${score.score}</li>`;
-  })
-  .join("");}

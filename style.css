@@ -99,37 +99,22 @@ body{
   
     
 }
-#btimeGauge{
-    
-    width : 150px;
-    height : 10px;
-    border-radius: 10px;
-    background-color: lightgray;
-   
-}
-#timeGauge{
-    
-    height : 10px;
-    border-radius: 10px;
-    background-color: mediumseagreen;
-   
-}
+
 #progress{
-    width : 500px;
-   display:flex;
-    align-items:flex-end;
-    padding:5px;
-    text-align: right;
-}
-.prog{
-    width : 25px;
-    height : 25px;
-    border: 1px solid #000;
-    display: inline-block;
-    border-radius: 50%;
-    margin-left : 5px;
-    margin-right : 5px;
-}
+    display:flex;
+     justify-content:space-evenly;
+     padding:5px;
+     text-align: right;
+ }
+ .prog{
+     width : 25px;
+     height : 25px;
+     border: 1px solid #000;
+     display: inline-block;
+     border-radius: 50%;
+     margin-left : 5px;
+     margin-right : 5px;
+ }
 #scoreContainer{
     
     background-color: darkgreen;
