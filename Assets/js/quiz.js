@@ -140,7 +140,7 @@ function scoreRender(){
     // calculate the amount of question percent answered by the user
     const scorePerCent = Math.round(100 * score/questions.length);
     
-    // choose the image based on the score
+    // choose the image based on the scorePerCent
     let img = (scorePerCent >= 80) ? "img/zard.png" :
               (scorePerCent >= 60) ? "img/millie.png" :
               (scorePerCent >= 40) ? "img/mander.png" :
