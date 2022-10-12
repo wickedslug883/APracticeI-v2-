@@ -2,19 +2,20 @@
  Quiz for Gamers
 Daniel Amadril JavaScript API Project
 
-API QUIZ
+## API QUIZ
 Creating a quiz with multiple choice questions, a timer and much more.
 
-Description
+## Description
 This project is simply for acedemic purposes. Creating a quiz through javascript and really understanding the use of API. I created a timed system that gives you a certain amount of time to answer the question, as well as color indicators if you got them wrong or right. I spent a lot of time trying to confiugure the local storage situation. Unfortuantely as of now, the only thing that does not work is saving the data into localstorage. 
-Demo:
-<img src="assets/img/readmeDEMO.png">
-Credit
+## Demo:
+<p> <img src="https://github.com/wickedslug883/APracticeI-v3-/blob/main/img/readmeDEMO.png"></p>
+
+## Credit
 Original Version: Daniel Amadril (wickedslug883)
 
-Current Version: https://github.com/wickedslug883
+Deployed Link: https://wickedslug883.github.io/APracticeI-v3-/
 
-License
+## License
 MIT License
 
 Copyright (c) [2022] [DanielAmadril]
