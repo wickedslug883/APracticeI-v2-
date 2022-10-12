@@ -102,15 +102,15 @@ function renderCounter(){
 
 // checkAnwer
 
-function checkAnswer(answer){
+function checkChoice(answer){
     if( answer == questions[runningQuestion].correct){
         // answer is correct
         score++;
         // change progress color to green
-        answerIsCorrect();
+        choiceIsCorrect();
     }else{
         // wrong color to red
-        answerIsWrong();
+        choiceIsWrong();
     }
     count = 0;
     if(runningQuestion < lastQuestion){
@@ -124,12 +124,12 @@ function checkAnswer(answer){
 }
 
 // answer is correct
-function answerIsCorrect(){
+function choiceIsCorrect(){
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
 // answer is incorrect
-function answerIsWrong(){
+function choiceIsWrong(){
     document.getElementById(runningQuestion).style.backgroundColor = "#f00";
 }
 

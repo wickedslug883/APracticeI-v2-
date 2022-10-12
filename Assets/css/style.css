@@ -4,7 +4,7 @@ body{
    
 }
 
-#container{
+#mainContent{
     margin: 150px auto;
           display:flex;
     align-items:center;
@@ -16,7 +16,7 @@ body{
     box-shadow: 0px 0px 10px 5px;
  
 }
-#quiz {
+#gameQuiz {
     position:absolute;
   
    width:75vw;
@@ -67,13 +67,13 @@ body{
     font-size: 1.25em;
 }
 
-#choices{
+#options{
     
     right : 0;
     top : 125px;
     padding : 15px
 }
-.choice{
+.option{
   
     
     text-align: center;
@@ -82,7 +82,7 @@ body{
     cursor: pointer;
     padding : 5px;
 }
-.choice:hover{
+.option:hover{
     border : 2px solid grey;
     font-weight: bold;
 }
@@ -115,7 +115,7 @@ body{
      margin-left : 5px;
      margin-right : 5px;
  }
-#scoreContainer{
+#scoreData{
     
     background-color: darkgreen;
     opacity: 0.7;
@@ -126,12 +126,12 @@ body{
     position: relative;
     display: none;
 }
-#scoreContainer img{
+#scoreData img{
     position: relative;
     top:125px;
     left: 640px;
 }
-#scoreContainer p{
+#scoreData p{
   position: relative;
   bottom: 150px;
    

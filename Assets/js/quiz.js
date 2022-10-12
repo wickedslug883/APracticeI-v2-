@@ -1,15 +1,14 @@
 // select all elements
 const start = document.getElementById("start");
-const quiz = document.getElementById("quiz");
+const gameQuiz = document.getElementById("gameQuiz");
 const question = document.getElementById("question");
 const qImg = document.getElementById("qImg");
-const choiceA = document.getElementById("A");
-const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
+const optionA = document.getElementById("A");
+const optionB = document.getElementById("B");
+const optionC = document.getElementById("C");
 const counter = document.getElementById("counter");
-
 const progress = document.getElementById("progress");
-const scoreDiv = document.getElementById("scoreContainer");
+const scoreDiv = document.getElementById("scoreData");
 const saveMenu = document.getElementById("saveMenu");
 const highScore = document.getElementById("highScores");
 
@@ -19,23 +18,23 @@ let questions = [
     {
         question : "Which franchise is considered to be the creator of the First Person Shooter genre? ",
         imgSrc : "img/moh.jpg",
-        choiceA : "DOOM",
-        choiceB : "Call Of Duty",
-        choiceC : "Battlefield",
+        optionA : "DOOM",
+        optionB : "Call Of Duty",
+        optionC : "Battlefield",
         correct : "A"
     },{
         question : "Which of the following games has grossed the most amount of sales.",
         imgSrc : "img/wow.jpeg",
-        choiceA : "Wii Sports",
-        choiceB : "Minecraft",
-        choiceC : "Grand Theft Auto V",
+         optionA : "Wii Sports",
+         optionB : "Minecraft",
+         optionC : "Grand Theft Auto V",
         correct : "B"
     },{
         question : "Donkey Kong was originally based on what/who?",
         imgSrc : "img/rs.png",
-        choiceA : "Robotics",
-        choiceB : "Godzilla",
-        choiceC : "Popeye",
+        optionA : "Robotics",
+        optionB : "Godzilla",
+        optionC : "Popeye",
         correct : "C"
     }
 ];
@@ -54,9 +53,9 @@ function renderQuestion(){
     
     question.innerHTML = "<p>"+ q.question +"</p>";
     qImg.innerHTML = "<img src="+ q.imgSrc +">";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    optionA.innerHTML = q. optionA;
+    optionB.innerHTML = q. optionB;
+    optionC.innerHTML = q. optionC;
 }
 
 start.addEventListener("click",startQuiz);
@@ -66,7 +65,7 @@ function startQuiz(){
     start.style.display = "none";
     highScore.style.display = "none";
     renderQuestion();
-    quiz.style.display = "block";
+    gameQuiz.style.display = "block";
     renderProgress();
     renderCounter();
     TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
@@ -153,7 +152,7 @@ function scoreRender(){
 
 }
 const username = document.querySelector('#username');
-const saveScoreBtn = document.querySelector('#saveScoreBtn');
+const saveInput = document.querySelector('#saveInput');
 const finalScore = document.querySelector('#finalScore');
 const mostRecentScore = localStorage.getItem('mostRecentScore');
 
@@ -164,7 +163,7 @@ const MAX_HIGH_SCORES = 5;
 finalScore.innerText = mostRecentScore;
 
 username.addEventListener('keyup', () => {
-    saveScoreBtn.disabled = !username.value
+    saveInput.disabled = !username.value
 })
 
 var saveHighScore = e => {
@@ -186,4 +185,4 @@ var saveHighScore = e => {
     localStorage.setItem('highScores', JSON.stringify(highScores))
     window.location.assign('/')
 };
-saveScoreBtn.addEventListener('click', saveHighScore)
+saveInput.addEventListener('click', saveHighScore)

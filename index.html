@@ -2,32 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz</title>
+    <title>Game Quiz</title>
     <link rel="stylesheet" href="Assets/css/style.css">
 </head>
 <body>
-    <div id="container">
+    <div id="mainContent">
         <div id="start">Start Quiz!</div> 
             <div id="highScores" class="highScore" >
                 <h1 id="finalScore">High Scores</h1>
                 <ul id="highScoresList"></ul>
               </div>
-        <div id="quiz" style="display: none">
+        <div id="gameQuiz" style="display: none">
             <div id="question"></div>
             <div id="qImg"></div>
-            <div id="choices">
-                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
-                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
-                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            <div id="options">
+                <div class="option" id="A" onclick="checkAnswer('A')"></div>
+                <div class="option" id="B" onclick="checkAnswer('B')"></div>
+                <div class="option" id="C" onclick="checkAnswer('C')"></div>
             </div>
             <div id="timer">
                 <div id="counter"></div>
-                <div id="btimeGauge"></div>
-                <div id="timeGauge"></div>
+             
             </div>
             <div id="progress"></div>
         </div>
-        <div id="scoreContainer" style="display: none">
+        <div id="scoreData" style="display: none">
             
          </div>  <div id="saveMenu" style="display: none">
             <form >
@@ -35,12 +34,12 @@
                 type="text"
                 name="username"
                 id="username"
-                placeholder="username"/>
+                placeholder="enter username"/>
             
             <button 
                 type="submit"
                 class="btn"
-                id="saveScoreBtn"
+                id="saveInput"
                 onclick="saveHighscore(e)" disabled> Save </button>
            </form> 
            <a class="btn" href="index.html">Go Home</a>
